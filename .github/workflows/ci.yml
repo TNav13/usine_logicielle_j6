@@ -56,7 +56,7 @@ jobs:
             run: pytest --cov=src --cov-report=xml -v
 
           - name: SonarCloud Scan
-            uses: SonarSource/sonarcloud-github-action@master
+            uses: SonarSource/sonarcloud-github-action@d899ed299620f557b0175710b8dedbdd7c31213d
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
