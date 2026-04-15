@@ -26,3 +26,6 @@ Pourquoi utiliser les deux ?
 
 Question 7 (compte-rendu) : Un collègue fait un git commit --no-verify pour contourner les
 pre-commit hooks. Est-ce un problème ? Pourquoi ?
+
+Question 8 (compte-rendu) : Qu'est-ce qu'un Quality Gate ? Donnez 3 exemples de conditions
+qu'on pourrait y mettre.
