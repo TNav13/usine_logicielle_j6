@@ -19,3 +19,10 @@ utiliseriez-vous l'un ou l'autre ?
 
 Question 5 (compte-rendu) : Qu'est-ce que l'analyse statique ? En quoi diffère-t-elle des tests
 unitaires ?
+
+Question 6 (compte-rendu) : Quel est l'intérêt des pre-commit hooks par rapport à la CI ?
+Pourquoi utiliser les deux ?
+
+
+Question 7 (compte-rendu) : Un collègue fait un git commit --no-verify pour contourner les
+pre-commit hooks. Est-ce un problème ? Pourquoi ?
