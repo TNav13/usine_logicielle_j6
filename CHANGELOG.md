@@ -1,6 +1,7 @@
 # Changelog
 
-## [1.2.0](https://github.com/TNav13/usine_logicielle_j6/compare/v1.1.0...v1.2.0) (2026-05-07)
+
+## [1.1.0](https://github.com/TNav13/usine_logicielle_j6/compare/mon-projet-flask-v1.0.0...mon-projet-flask-v1.1.0) (2026-05-07)
 
 
 ### Features

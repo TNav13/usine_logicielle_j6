@@ -1,0 +1,9 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "python",
+      "package-name": "mon-projet-flask",
+      "version-file": "pyproject.toml"
+    }
+  }
+}
