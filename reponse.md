@@ -40,3 +40,17 @@ J'ai intégré l'utilisation des secrets GitHub pour éviter de stocker des info
     1.  **Gestionnaires de secrets (Vaults) :** HashiCorp Vault, AWS Secrets Manager, GCP Secret Manager.
     2.  **Secrets de plateforme CI/CD :** GitHub Secrets, GitLab CI/CD Variables.
     3.  **Variables d'environnement locales :** Chargées via un fichier `.env` (exclu du commit via `.gitignore`) ou configurées sur le serveur d'exécution.
+
+## Partie 4 — Détection de secrets avec GitLeaks
+
+J'ai testé GitLeaks localement et simulé une fuite de secret. L'outil a parfaitement détecté la clé API GCP factice.
+
+### Questions
+**Question 5 : Un développeur a accidentellement commité une clé API GCP dans le code, puis l'a supprimée dans un commit suivant. Le secret est-il en sécurité ? Que faut-il faire ?**
+
+*   **Sécurité :** Non, le secret n'est pas en sécurité. Il reste présent dans l'historique Git et peut être récupéré par n'importe qui ayant accès au dépôt.
+*   **Actions à mener :** Il faut impérativement révoquer (invalider) le secret immédiatement auprès du fournisseur, puis nettoyer l'historique Git (avec `BFG` ou `git-filter-repo`) et enfin générer une nouvelle clé.
+
+**Question 6 : Pourquoi GitLeaks est-il placé au tout début du pipeline, avant même le linting ?**
+
+Pour appliquer le principe du **fail-fast**. La détection d'un secret est une faille de sécurité majeure qui doit stopper immédiatement le pipeline pour éviter de propager le risque et pour économiser des ressources de calcul inutiles sur un commit qui de toute façon sera rejeté.
