@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.2.0](https://github.com/TNav13/usine_logicielle_j6/compare/mon-projet-flask-v1.1.0...mon-projet-flask-v1.2.0) (2026-05-07)
+
+
+### Features
+
+* ajout de la route de salutation du TP ([4db127a](https://github.com/TNav13/usine_logicielle_j6/commit/4db127a47c1e6e9bb8ad88aca79eac1db9416691))
+
 ## [1.1.0](https://github.com/TNav13/usine_logicielle_j6/compare/mon-projet-flask-v1.0.0...mon-projet-flask-v1.1.0) (2026-05-07)
 
 
