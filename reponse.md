@@ -37,6 +37,7 @@ Cette condition limite l'exécution du job à la branche `main`. On ne déclench
 #### Question 8 : Pourquoi utilise-t-on ${{ github.sha }} comme tag d'image ? Quel avantage par rapport à un numéro de version manuel ?
 Le SHA est unique et généré automatiquement pour chaque commit, garantissant une **immuabilité** parfaite et une traçabilité directe entre une image et son code source exact, sans risque d'erreur humaine.
 
+<<<<<<< HEAD
 #### Question 9 : Qu'est-ce qu'un rollback ? Pourquoi est-il essentiel de versionner les images Docker avec des tags précis ?
 Un **rollback** est l'action de revenir rapidement à une version antérieure stable de l'application en cas de bug critique sur la nouvelle version déployée. Le versionnage précis (via SHA ou tags de version) est indispensable pour identifier sans erreur l'image exacte que l'on souhaite restaurer.
 
@@ -50,7 +51,6 @@ Le risque est de déployer un bug majeur ou une régression. On atténue cela pa
 Le **multi-stage build** permet de séparer l'étape de construction de l'étape d'exécution. On construit l'app dans une image "builder", puis on ne copie que le nécessaire dans une image finale légère.
 - **Taille** : On passe de 815 MB à 802 MB (le gain est modéré ici car l'image de base slim est déjà très optimisée).
 - **Sécurité** : L'image finale ne contient plus les outils de build (compilateurs, caches pip), ce qui réduit la surface d'attaque.
-
 **Dockerfile optimisé :**
 ```dockerfile
 # Stage 1: Build
