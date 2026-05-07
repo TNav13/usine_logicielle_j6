@@ -49,3 +49,4 @@ def test_about(client):
 def test_version(client):
     response = client.get("/version")
     assert response.status_code == 200
+    assert "version" in response.get_json()
