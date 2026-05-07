@@ -7,3 +7,6 @@ coverage-report/
 .vscode/
 .idea/
 .DS_Store
+audit-report.json
+coverage-report/
+.pytest_cache/
