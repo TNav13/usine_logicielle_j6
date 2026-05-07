@@ -21,6 +21,11 @@ def hello(name):
     return jsonify({"message": f"Bonjour {name} !"})
 
 
+@app.route("/hello-tp")
+def hello_tp():
+    return jsonify({"message": "Bonjour du TP6 !"})
+
+
 @app.route("/version")
 def version():
     return jsonify({"version": "1.1.0"})
