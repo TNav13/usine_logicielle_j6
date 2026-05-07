@@ -17,3 +17,13 @@ J'ai testé `pip-audit` sur notre projet. Bien que quelques vulnérabilités min
 **Question 2 : Pourquoi est-il important de scanner les dépendances et pas seulement votre propre code ?**
 
 Il est crucial de scanner les dépendances car une application moderne repose majoritairement sur du code tiers (bibliothèques open-source). On parle de **sécurité de la "Supply Chain"**. Même si mon propre code est parfaitement sécurisé, si une bibliothèque que j'utilise (comme Flask ou Requests) possède une faille connue, mon application devient vulnérable. Les attaquants ciblent souvent ces dépendances populaires car elles offrent un point d'entrée sur de très nombreux systèmes simultanément.
+
+## Partie 2 — Dependabot : mises à jour automatiques
+
+J'ai configuré Dependabot pour automatiser la surveillance et la mise à jour de nos dépendances Python et de nos Actions GitHub.
+
+### Question
+**Question 3 : Quel est l'avantage de Dependabot par rapport à un scan manuel avec pip-audit ? Pourquoi configure-t-on aussi l'écosystème github-actions ?**
+
+*   **Avantage de Dependabot :** Contrairement à `pip-audit` qui est un outil de détection (il nous dit ce qui ne va pas), Dependabot est un outil de **remédiation proactive**. Il surveille les dépôts en continu et, dès qu'une mise à jour (de sécurité ou non) est disponible, il crée automatiquement une Pull Request avec les changements nécessaires. Cela réduit la "dette de sécurité" sans intervention manuelle constante.
+*   **Écosystème github-actions :** Les Actions GitHub que nous utilisons sont aussi des logiciels tiers qui peuvent avoir des vulnérabilités ou devenir obsolètes. Les scanner permet de s'assurer que notre infrastructure de CI/CD est toujours basée sur des versions stables et sécurisées.
