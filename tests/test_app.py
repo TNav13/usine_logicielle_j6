@@ -44,3 +44,8 @@ def test_about(client):
     response = client.get("/about")
     assert response.status_code == 200
     assert response.get_json()["version"] == "1.0"
+
+
+def test_version(client):
+    response = client.get("/version")
+    assert response.status_code == 200
